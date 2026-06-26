@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Great Biryani Tour | A Royal Culinary Journey</title>
+    <!-- Meta tags for SEO -->
+    <meta name="description" content="Embark on a culinary journey through the royal history and diverse types of Indian Biryani. Explore Hyderabadi, Lucknowi, Kolkata, Malabar, and Sindhi styles.">
+    <meta name="keywords" content="Biryani, Indian Biryani, Hyderabadi Biryani, Lucknowi Biryani, Kolkata Biryani, Biryani Types, Biryani Quiz">
+    
+    <!-- Google Fonts: Playfair Display & Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    
+    <!-- CSS stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="main-header">1
+            <span class="logo-icon">🍲</span>
+            <span class="logo-text">Biryani<span class="accent-text">Safar</span></span>
+        </div>
+        <nav class="nav-links">
+            <a href="#hero" class="nav-link">Home</a>
+            <a href="#gallery-section" class="nav-link">Explore Types</a>
+            <a href="#quiz-section" class="nav-link highlight-nav">Match Your Palate</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <span class="subheading-badge">👑 The Royal Culinary Legacy</span>
+                <h1 class="hero-title">A Journey of Flavors, Spices & Fragrance</h1>
+                <p class="hero-description">From the grand royal courts of Nizams and Nawabs to coastal shorelines, discover the legendary variations of India’s most celebrated rice masterwork.</p>
+                <div class="hero-buttons">
+                    <a href="#gallery-section" class="btn btn-primary">Explore Varieties</a>
+                    <a href="#quiz-section" class="btn btn-secondary">Find Your Perfect Biryani</a>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <span class="mouse">
+                    <span class="wheel"></span>
+                </span>
+                <span class="scroll-text">Scroll to explore</span>
+            </div>
+        </section>
+
+        <!-- Gallery & Filter Section -->
+        <section id="gallery-section" class="gallery-section">
+            <div class="section-header">
+                <span class="section-tag">Varieties</span>
+                <h2>Discover Your Favorite Style</h2>
+                <p class="section-subtitle">Every region has a story, a signature aroma, and a unique way of layering rice and spice. Use filters or search to narrow down your tour.</p>
+            </div>
+
+            <!-- Filter Controls Container -->
+            <div class="filter-controls">
+                <div class="search-box-container">
+                    <span class="search-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    </span>
+                    <input type="text" id="biryani-search" placeholder="Search by name, origin, or key ingredient..." aria-label="Search Biryani Types">
+                    <button id="clear-search" class="clear-btn" aria-label="Clear Search">&times;</button>
+                </div>
+                
+                <div class="tag-filters-container">
+                    <span class="filter-label">Filter by:</span>
+                    <div class="filter-tags" role="group" aria-label="Filter Biryanis by Tag">
+                        <button class="filter-tag active" data-filter="all">All Styles</button>
+                        <button class="filter-tag" data-filter="Spicy">🔥 Spicy</button>
+                        <button class="filter-tag" data-filter="Mild">🍃 Mild</button>
+                        <button class="filter-tag" data-filter="Aromatic">🌸 Aromatic</button>
+                        <button class="filter-tag" data-filter="Dum Style">🏺 Dum Style</button>
+                        <button class="filter-tag" data-filter="Egg & Potato">🥚 Egg & Potato</button>
+                        <button class="filter-tag" data-filter="Short Grain">🌾 Short Grain</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dynamic Biryani Grid -->
+            <div id="biryani-grid" class="biryani-grid">
+                <!-- Javascript will inject cards here -->
+                <div class="loader">Cooking up the choices...</div>
+            </div>
+            
+            <div id="no-results" class="no-results hidden">
+                <div class="no-results-icon">🌶️</div>
+                <h3>No Biryanis match your criteria</h3>
+                <p>Try searching for something else or clearing the filters.</p>
+                <button id="reset-filters-btn" class="btn btn-primary btn-sm">Reset Filters</button>
+            </div>
+        </section>
+
+        <!-- Interactive Recommendation Quiz Section -->
+        <section id="quiz-section" class="quiz-section">
+            <div class="quiz-container">
+                <div class="quiz-visual">
+                    <div class="quiz-visual-overlay"></div>
+                    <div class="quiz-visual-content">
+                        <h3>What does your palate crave?</h3>
+                        <p>Answer three quick questions about your food preferences, and our royal menu planner will match you with your ideal Biryani style.</p>
+                    </div>
+                </div>
+                
+                <div class="quiz-card">
+                    <div class="quiz-header">
+                        <span class="quiz-step-indicator">Question <span id="current-step">1</span> of 3</span>
+                        <div class="progress-bar">
+                            <div id="quiz-progress" class="progress-fill"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-body">
+                        <!-- Step 1 -->
+                        <div class="quiz-step active" data-step="1">
+                            <h3 class="question-text">1. How do you feel about heat and spices?</h3>
+                            <div class="options-grid">
+                                <button class="option-btn" data-answer="spice" data-value="high">
+                                    <span class="option-icon">🌶️🌶️</span>
+                                    <span class="option-title">Fiery & Intense</span>
+                                    <span class="option-desc">Give me the spiciest punch! I love green chilies and high heat.</span>
+                                </button>
+                                <button class="option-btn" data-answer="spice" data-value="medium">
+                                    <span class="option-icon">🌶️</span>
+                                    <span class="option-title">Medium & Balanced</span>
+                                    <span class="option-desc">I like a good kick, but aroma and flavor should lead the way.</span>
+                                </button>
+                                <button class="option-btn" data-answer="spice" data-value="low">
+                                    <span class="option-icon">🍃</span>
+                                    <span class="option-title">Mild & Perfumed</span>
+                                    <span class="option-desc">Minimal heat, maximum aroma. I love floral, sweet-smelling rice.</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div class="quiz-step" data-step="2">
+                            <h3 class="question-text">2. What grain structure do you prefer?</h3>
+                            <div class="options-grid">
+                                <button class="option-btn" data-answer="grain" data-value="long">
+                                    <span class="option-icon">🌾</span>
+                                    <span class="option-title">Long & Elegant Basmati</span>
+                                    <span class="option-desc">Slender, extra-long grains that stay beautifully separate.</span>
+                                </button>
+                                <button class="option-btn" data-answer="grain" data-value="short">
+                                    <span class="option-icon">🍚</span>
+                                    <span class="option-title">Short & Fragrant grains</span>
+                                    <span class="option-desc">Small, thin Kaima/Jeerakasala grains cooked in pure ghee.</span>
+                                </button>
+                                <button class="option-btn" data-answer="grain" data-value="either">
+                                    <span class="option-icon">🌟</span>
+                                    <span class="option-title">Either works for me</span>
+                                    <span class="option-desc">Rice is rice, as long as it absorbs all the delicious meat flavors.</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div class="quiz-step" data-step="3">
+                            <h3 class="question-text">3. How do you feel about potatoes or eggs in Biryani?</h3>
+                            <div class="options-grid">
+                                <button class="option-btn" data-answer="potato" data-value="yes">
+                                    <span class="option-icon">🥔🥚</span>
+                                    <span class="option-title">Love them!</span>
+                                    <span class="option-desc">A soft potato absorbing spices is a culinary blessing.</span>
+                                </button>
+                                <button class="option-btn" data-answer="potato" data-value="no">
+                                    <span class="option-icon">🥩</span>
+                                    <span class="option-title">No potatoes, just meat/veggies</span>
+                                    <span class="option-desc">Keep it classic. Only rice, meat, and standard spices, please.</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Results Step -->
+                        <div class="quiz-step quiz-result-step" data-step="result">
+                            <div class="result-celebration">🎉</div>
+                            <span class="result-badge">Your Match</span>
+                            <h3 id="result-title" class="result-title">Kolkata Biryani</h3>
+                            <div id="result-card-preview" class="result-card-preview">
+                                <!-- Dynamic card preview of recommended Biryani -->
+                            </div>
+                            <p id="result-explanation">Based on your love for subtle perfumes and potatoes, Kolkata Biryani is your perfect match!</p>
+                            <div class="quiz-result-buttons">
+                                <button id="view-matched-btn" class="btn btn-primary">Jump to Details</button>
+                                <button id="restart-quiz-btn" class="btn btn-outline">Retake Quiz</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-footer">
+                        <button id="prev-step-btn" class="btn btn-outline btn-sm hidden">Back</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Glassmorphic Details Modal -->
+    <div id="details-modal" class="modal-overlay" aria-hidden="true" role="dialog">
+        <div class="modal-container">
+            <button id="close-modal" class="close-modal-btn" aria-label="Close details modal">&times;</button>
+            <div class="modal-content-grid">
+                <div class="modal-image-panel">
+                    <img id="modal-img" src="" alt="Biryani Type image">
+                    <div class="modal-image-gradient"></div>
+                    <div class="modal-image-info">
+                        <span id="modal-origin" class="origin-tag">Origin</span>
+                        <h2 id="modal-name">Biryani Name</h2>
+                    </div>
+                </div>
+                <div class="modal-details-panel">
+                    <div class="modal-tabs">
+                        <button class="modal-tab-btn active" data-tab="about">Story & Flavors</button>
+                        <button class="modal-tab-btn" data-tab="ingredients">Ingredients</button>
+                        <button class="modal-tab-btn" data-tab="serving">Serving Style</button>
+                    </div>
+                    
+                    <div class="modal-tab-content">
+                        <!-- About Tab -->
+                        <div id="tab-about" class="tab-pane active">
+                            <div class="metric-meters">
+                                <div class="metric-meter">
+                                    <span class="meter-label">Spice Level</span>
+                                    <div class="meter-track">
+                                        <div id="modal-spice-bar" class="meter-fill spice-color"></div>
+                                    </div>
+                                    <span id="modal-spice-text" class="meter-val">5/5</span>
+                                </div>
+                                <div class="metric-meter">
+                                    <span class="meter-label">Aroma Intensity</span>
+                                    <div id="modal-aroma-text" class="meter-val text-accent">Strong</div>
+                                </div>
+                            </div>
+                            <div class="detail-section">
+                                <h3>Description</h3>
+                                <p id="modal-desc">Description text goes here.</p>
+                            </div>
+                            <div class="detail-section">
+                                <h3>Historical Origin</h3>
+                                <p id="modal-history">History text goes here.</p>
+                            </div>
+                        </div>
+
+                        <!-- Ingredients Tab -->
+                        <div id="tab-ingredients" class="tab-pane">
+                            <h3>Key Ingredients</h3>
+                            <ul id="modal-ingredients-list" class="ingredients-list">
+                                <!-- list items injected -->
+                            </ul>
+                            <div class="grain-highlight">
+                                <strong>Grain Selection: </strong><span id="modal-grain">Long grain basmati</span>
+                            </div>
+                        </div>
+
+                        <!-- Serving Tab -->
+                        <div id="tab-serving" class="tab-pane">
+                            <h3>How It is Served</h3>
+                            <p id="modal-serving">Accompaniment details go here.</p>
+                            <div class="pairing-tip">
+                                <strong>Chef's Pairing Tip:</strong> Traditional accompaniments elevate the regional flavors, balancing spice and fragrance.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h3>Biryani<span>Safar</span></h3>
+                <p>Exploring the diversity, heritage, and royal flavours of the subcontinent’s most iconic rice preparation.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#gallery-section">Biryani Grid</a></li>
+                    <li><a href="#quiz-section">Palate Matcher</a></li>
+                </ul>
+            </div>
+            <div class="footer-quotes">
+                <p class="quote">"Biryani is not just food, it is an emotion."</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Biryani Safar. Created with love, saffron, and cardamoms.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript code -->
+    <script src="app.js"></script>
+</body>
+</html>
